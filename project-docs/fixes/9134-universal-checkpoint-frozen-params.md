@@ -8,9 +8,10 @@ Upstream issue **[#9134](https://github.com/deepspeedai/DeepSpeed/issues/9134)**
 | Reported | 2026-11-20 |
 | Severity | Silent data loss on resume — no exception, no warning |
 | Difficulty | Medium-hard: the symptom is in the load path, the cause is split across the load path, the converter, and the save format |
-| Base commit | `d70adc32` (`deepspeedai/DeepSpeed` `master`) |
+| Base commit | `25eaac4f` (`deepspeedai/DeepSpeed` `master`); developed on `d70adc32` and rebased forward, which changed nothing in the touched files |
 | Branch | `fix/uc-frozen-params` |
-| Files changed | `deepspeed/runtime/engine.py` (+99/-1), `tests/unit/checkpoint/test_universal_checkpoint.py` (+94) |
+| Pull request | [deepspeedai/DeepSpeed#9139](https://github.com/deepspeedai/DeepSpeed/pull/9139) |
+| Files changed | `deepspeed/runtime/engine.py` (+98/-1), `tests/unit/checkpoint/test_universal_checkpoint.py` (+94/-0) |
 | Validated on | CPU only (aarch64, gloo, torch 2.15.0+cpu). No GPU was available. |
 
 ---
@@ -324,6 +325,10 @@ is deliberately out of scope.
 ---
 
 ## 8. Pull request description as submitted
+
+Submitted as [deepspeedai/DeepSpeed#9139](https://github.com/deepspeedai/DeepSpeed/pull/9139)
+(2 files, +192/-1, one DCO-signed commit on base `25eaac4f`). The text below is the body as
+posted.
 
 > ### Restore frozen parameters and buffers on a universal checkpoint load
 >
